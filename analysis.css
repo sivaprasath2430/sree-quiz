@@ -1,0 +1,296 @@
+body{
+
+    margin:0;
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(-45deg,#0f172a,#1e3a8a,#2563eb,#38bdf8);
+
+    background-size:400% 400%;
+
+    animation:bgMove 12s ease infinite;
+
+    min-height:100vh;
+
+}
+
+@keyframes bgMove{
+
+    0%{background-position:0% 50%;}
+
+    50%{background-position:100% 50%;}
+
+    100%{background-position:0% 50%;}
+
+}
+.container{
+
+    width:95%;
+
+    margin:30px auto;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 10px 40px rgba(0,0,0,.35);
+
+}
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+}
+
+.card{
+
+    padding:30px;
+
+    border-radius:20px;
+
+    color:white;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.1);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+    animation:cardFade .8s ease;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.card:hover{
+
+    transform:translateY(-12px) scale(1.05);
+
+    box-shadow:0 0 25px #00d4ff;
+
+}
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+.card h2{
+
+    font-size:45px;
+
+    color:#00ffff;
+
+    text-shadow:0 0 20px cyan;
+
+    animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+
+        text-shadow:0 0 5px cyan;
+
+    }
+
+    to{
+
+        text-shadow:0 0 25px cyan;
+
+    }
+
+}
+/* ===========================
+   Modern Animated Table
+=========================== */
+
+table{
+
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    margin-top:30px;
+    overflow:hidden;
+    border-radius:15px;
+    background:#ffffff;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+
+    animation:tableFade .8s ease;
+
+}
+
+@keyframes tableFade{
+
+    from{
+
+        opacity:0;
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+thead{
+
+    background:linear-gradient(90deg,#2563eb,#3b82f6);
+
+}
+
+thead th{
+
+    color:#fff;
+    padding:18px;
+    font-size:17px;
+    font-weight:600;
+    text-transform:uppercase;
+    letter-spacing:1px;
+
+}
+
+tbody td{
+
+    padding:16px;
+    text-align:center;
+    font-size:16px;
+    border-bottom:1px solid #e5e7eb;
+    transition:.3s;
+
+}
+
+tbody tr:nth-child(even){
+
+    background:#f8fafc;
+
+}
+
+tbody tr:hover{
+
+    background:#dbeafe;
+    transform:scale(1.01);
+    box-shadow:0 5px 15px rgba(37,99,235,.2);
+
+}
+
+tbody tr:hover td{
+
+    color:#1d4ed8;
+    font-weight:600;
+
+}
+
+tbody tr:last-child td{
+
+    border-bottom:none;
+
+}
+thead{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#dbeafe;
+
+    transform:scale(1.01);
+
+}
+button{
+
+    padding:12px 28px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(45deg,#00d4ff,#2563eb);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 20px cyan;
+
+}
+h1{
+
+    color:white;
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:30px;
+
+    animation:title 1s;
+
+}
+
+@keyframes title{
+
+    from{
+
+        opacity:0;
+
+        letter-spacing:15px;
+
+    }
+
+    to{
+
+        opacity:1;
+
+        letter-spacing:2px;
+
+    }
+
+}

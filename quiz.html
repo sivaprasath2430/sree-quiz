@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QuizMaster AI | Quiz</title>
+
+<link rel="stylesheet" href="/quiz.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="quizCard">
+
+<!-- Header -->
+
+<div class="header">
+
+<h1 id="quizTitle">
+
+Programming Quiz
+
+</h1>
+
+<div class="timer">
+
+<i class="fa-solid fa-clock"></i>
+
+<span id="time">
+
+20:00
+
+</span>
+
+</div>
+
+</div>
+
+<!-- Progress -->
+
+<div class="progress">
+
+<div class="progressBar" id="progressBar"></div>
+
+</div>
+
+<!-- Question Number -->
+
+<div class="questionNo">
+
+Question
+
+<span id="currentQuestion">
+
+1
+
+</span>
+
+/
+
+<span id="totalQuestion">
+
+10
+
+</span>
+
+</div>
+
+<!-- Question -->
+
+<h2 id="question">
+
+Loading Question...
+
+</h2>
+
+<!-- Options -->
+
+<div class="options">
+
+<button class="option">Option A</button>
+
+<button class="option">Option B</button>
+
+<button class="option">Option C</button>
+
+<button class="option">Option D</button>
+
+</div>
+
+<!-- Navigation -->
+
+<div class="buttons">
+
+<button id="prevBtn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Previous
+
+</button>
+
+<button id="nextBtn">
+
+Next
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+<button id="submitBtn">
+
+<i class="fa-solid fa-paper-plane"></i>
+
+Submit Quiz
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="/quiz.js"></script>
+
+</body>
+
+</html>

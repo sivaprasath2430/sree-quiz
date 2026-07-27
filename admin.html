@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QuizMaster AI | Admin Dashboard</title>
+
+<link rel="stylesheet" href="/admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+
+</head>
+
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.5.136/pdf.min.js"></script>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        <h2>QuizMaster AI</h2>
+
+    </div>
+
+    <ul>
+<ul>
+
+    <li id="dashboardBtn" class="active">
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+    </li>
+
+
+
+    <li id="questionsBtn">
+        <i class="fa-solid fa-circle-question"></i>
+        Questions
+    </li>
+
+    <li id="studentsBtn">
+        <i class="fa-solid fa-users"></i>
+        Students
+    </li>
+
+    <li id="leaderboardBtn">
+        <i class="fa-solid fa-ranking-star"></i>
+        Leaderboard
+    </li>
+
+    <li id="analysisBtn">
+        <i class="fa-solid fa-chart-line"></i>
+        Analysis
+    </li>
+
+    <li id="settingsBtn">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+    </li>
+    
+
+
+</ul>
+    </ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+    <!-- Header -->
+
+    <header>
+
+        <div>
+
+            <h1>Admin Dashboard</h1>
+
+            <p>Welcome Back, Administrator 👋</p>
+
+        </div>
+
+        <div class="profile">
+
+            <img src="https://i.pravatar.cc/80" alt="">
+
+        </div>
+
+    </header>
+
+    <!-- Statistics -->
+
+    <section class="cards">
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h2>250</h2>
+
+            <p>Total Students</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-file-circle-question"></i>
+
+            <h2>1200</h2>
+
+            <p>Total Questions</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <h2>40</h2>
+
+            <p>Published Quiz</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-trophy"></i>
+
+            <h2>95%</h2>
+
+            <p>Average Score</p>
+
+        </div>
+
+    </section>
+
+    <!-- Upload -->
+
+    <!-- Upload -->
+
+<section class="uploadBox">
+
+    <h2>Upload PDF Question Paper</h2>
+
+    <p>Select Quiz and Upload PDF</p>
+
+    <select id="quizSelect">
+
+        <option value="1">Computer Networks</option>
+
+        <option value="2">Operating System</option>
+
+        <option value="3">Java Programming</option>
+
+        <option value="4">Database</option>
+
+    </select>
+
+    <br><br>
+
+    <input
+        type="file"
+        id="pdfFile"
+        accept=".pdf">
+
+    <br><br>
+<button id="createQuizBtn">
+    <i class="fa-solid fa-book"></i>
+    Create Quiz
+</button>
+
+<button id="uploadBtn">
+    <i class="fa-solid fa-upload"></i>
+    Upload PDF
+</button>
+<section class="deleteBox">
+
+    <h2>Delete Quiz Questions</h2>
+
+    <select id="deleteQuizId">
+
+        <option value="1">Computer Networks</option>
+        <option value="2">Operating System</option>
+        <option value="3">Java Programming</option>
+        <option value="4">Database</option>
+
+    </select>
+
+
+    
+
+    <button id="deleteQuizBtn">
+
+        <i class="fa-solid fa-trash"></i>
+
+        Delete Questions
+
+    </button>
+
+</section>
+
+</section>
+    </section>
+    <!-- Dashboard Tools -->
+
+<section class="tools">
+
+    <div class="searchBox">
+
+        <input
+            type="text"
+            id="searchQuestion"
+            placeholder="🔍 Search Questions">
+
+    </div>
+
+    <div class="rightTools">
+
+        <button id="themeBtn">
+
+            🌙 Dark Mode
+
+        </button>
+
+        <button id="importBtn">
+
+            📂 Import Quiz
+
+        </button>
+
+        <input
+            type="file"
+            id="importFile"
+            accept=".json"
+            hidden>
+
+    </div>
+
+</section>
+
+    <!-- Question Preview -->
+
+    <section class="preview">
+
+        <h2>Extracted Questions</h2>
+
+        <div id="questionList">
+
+            <p>
+
+                No PDF uploaded.
+
+            </p>
+
+        </div>
+       
+
+    </section>
+
+</div>
+
+<section class="quizInfo">
+
+    <h2>QUIZ DETAILS </h2>
+
+    <input
+        type="text"
+        id="quizTitle"
+        placeholder="Quiz Title">
+
+    <textarea
+        id="quizDescription"
+        placeholder="Quiz Description"></textarea>
+
+    <input
+        type="number"
+        id="quizTime"
+        placeholder="Time in Minutes">
+
+    <input
+        type="number"
+        id="quizMarks"
+        placeholder="Marks Per Question">
+
+    <div class="quizButtons">
+
+        <button id="addQuestionBtn">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Question
+
+        </button>
+
+        
+
+        <button id="resetBtn">
+
+            <i class="fa-solid fa-trash"></i>
+
+            Reset
+
+        </button>
+    </div>
+
+</section>
+<<!-- Student Management -->
+
+<section class="studentsSection" id="studentsSection" style="display:none;">
+
+    <div class="studentHeader">
+
+        <h2>Student Management</h2>
+
+        <button id="closeStudents">
+
+            <i class="fa-solid fa-xmark"></i>
+
+            Exit
+
+        </button>
+
+    </div>
+
+    <table id="studentTable">
+
+        <thead>
+
+            <tr>
+
+                <th>S.No</th>
+                <th>Name</th>
+                <th>Student ID</th>
+                <th>Phone</th>
+                <th>College</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+
+<script src="/admin.js"></script>
+
+</body>
+
+</html>
+<!-- Quiz Information -->

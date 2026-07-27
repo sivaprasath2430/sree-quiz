@@ -1,0 +1,408 @@
+/* ==========================================
+   QuizMaster AI - Quiz Page
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#0F172A,#1E3A8A,#0EA5E9);
+
+    overflow:hidden;
+
+}
+
+/* ==========================
+Animated Background
+========================== */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    background:#6C63FF;
+
+    border-radius:50%;
+
+    top:-180px;
+
+    left:-180px;
+
+    opacity:.25;
+
+    filter:blur(120px);
+
+}
+
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+
+    height:400px;
+
+    background:#00C9FF;
+
+    border-radius:50%;
+
+    bottom:-150px;
+
+    right:-150px;
+
+    opacity:.25;
+
+    filter:blur(120px);
+
+}
+
+/* ==========================
+Container
+========================== */
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+/* ==========================
+Quiz Card
+========================== */
+
+.quizCard{
+
+    width:850px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.4);
+
+    animation:fadeUp .8s ease;
+
+    z-index:2;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================
+Header
+========================== */
+
+.header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+
+}
+
+.header h1{
+
+font-size:30px;
+
+color:white;
+
+}
+
+.timer{
+
+padding:12px 22px;
+
+background:#FF4D4D;
+
+border-radius:50px;
+
+font-weight:700;
+
+color:white;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+/* ==========================
+Progress
+========================== */
+
+.progress{
+
+width:100%;
+
+height:12px;
+
+background:#22304f;
+
+border-radius:50px;
+
+overflow:hidden;
+
+margin-bottom:25px;
+
+}
+
+.progressBar{
+
+width:10%;
+
+height:100%;
+
+background:linear-gradient(90deg,#00C9FF,#6C63FF);
+
+transition:.5s;
+
+}
+
+/* ==========================
+Question
+========================== */
+
+.questionNo{
+
+color:#ccc;
+
+margin-bottom:15px;
+
+font-size:18px;
+
+}
+
+#question{
+
+font-size:26px;
+
+line-height:1.5;
+
+margin-bottom:30px;
+
+color:white;
+
+}
+
+/* ==========================
+Options
+========================== */
+
+.options{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:18px;
+
+margin-bottom:35px;
+
+}
+
+.option{
+
+padding:18px;
+
+font-size:17px;
+
+border:none;
+
+border-radius:15px;
+
+cursor:pointer;
+
+background:#1E293B;
+
+color:white;
+
+transition:.3s;
+
+text-align:left;
+
+}
+
+.option:hover{
+
+background:#00C9FF;
+
+transform:translateY(-3px);
+
+}
+
+.option.selected{
+
+background:#6C63FF;
+
+border:2px solid white;
+
+}
+
+/* ==========================
+Buttons
+========================== */
+
+.buttons{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:15px;
+
+}
+
+.buttons button{
+
+flex:1;
+
+padding:16px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:17px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+color:white;
+
+}
+
+#prevBtn{
+
+background:#6C63FF;
+
+}
+
+#nextBtn{
+
+background:#00C9FF;
+
+}
+
+#submitBtn{
+
+background:#00B894;
+
+}
+
+.buttons button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+/* ==========================
+Responsive
+========================== */
+
+@media(max-width:900px){
+
+.quizCard{
+
+width:100%;
+
+}
+
+.options{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.header{
+
+flex-direction:column;
+
+gap:20px;
+
+text-align:center;
+
+}
+
+#question{
+
+font-size:22px;
+
+}
+
+.buttons{
+
+flex-direction:column;
+
+}
+
+}

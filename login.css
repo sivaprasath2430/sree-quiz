@@ -1,0 +1,582 @@
+/* =====================================
+   QuizMaster AI - Login Page
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:linear-gradient(135deg,#081120,#101B3A,#1E3A8A);
+
+}
+
+/* =============================
+Animated Background
+============================= */
+
+.background{
+
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    z-index:-1;
+
+}
+
+.background span{
+
+    position:absolute;
+
+    display:block;
+
+    width:150px;
+    height:150px;
+
+    background:rgba(255,255,255,.05);
+
+    border-radius:50%;
+
+    animation:move 20s linear infinite;
+
+}
+
+.background span:nth-child(1){
+
+left:5%;
+animation-duration:18s;
+
+}
+
+.background span:nth-child(2){
+
+left:30%;
+width:90px;
+height:90px;
+
+animation-duration:22s;
+
+}
+
+.background span:nth-child(3){
+
+left:55%;
+width:180px;
+height:180px;
+
+animation-duration:30s;
+
+}
+
+.background span:nth-child(4){
+
+left:75%;
+width:100px;
+height:100px;
+
+animation-duration:24s;
+
+}
+
+.background span:nth-child(5){
+
+left:90%;
+width:140px;
+height:140px;
+
+animation-duration:20s;
+
+}
+
+@keyframes move{
+
+0%{
+
+transform:translateY(100vh) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(360deg);
+
+}
+
+}
+
+/* =============================
+Home Button
+============================= */
+
+.homeBtn{
+
+position:fixed;
+
+top:30px;
+left:30px;
+
+padding:12px 25px;
+
+text-decoration:none;
+
+background:#6C63FF;
+
+color:white;
+
+border-radius:40px;
+
+transition:.4s;
+
+font-weight:600;
+
+}
+
+.homeBtn:hover{
+
+background:#00C9FF;
+
+transform:translateY(-4px);
+
+}
+
+/* =============================
+Container
+============================= */
+
+.container{
+
+width:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+/* =============================
+Glass Card
+============================= */
+
+.login-card{
+
+width:430px;
+
+padding:45px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+animation:fadeUp 1s;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* =============================
+Logo
+============================= */
+
+.logo{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+gap:10px;
+
+margin-bottom:20px;
+
+}
+
+.logo i{
+
+font-size:38px;
+color:#FFD54F;
+
+}
+
+.logo h2{
+
+color:white;
+
+}
+
+/* =============================
+Heading
+============================= */
+
+.login-card h1{
+
+text-align:center;
+
+font-size:34px;
+
+color:white;
+
+margin-bottom:10px;
+
+}
+
+.login-card p{
+
+text-align:center;
+
+color:#ddd;
+
+margin-bottom:30px;
+
+}
+
+/* =============================
+Input Box
+============================= */
+
+.inputBox{
+
+position:relative;
+
+margin-bottom:22px;
+
+}
+
+.inputBox input{
+
+width:100%;
+
+padding:16px 50px;
+
+border:none;
+
+outline:none;
+
+border-radius:50px;
+
+font-size:16px;
+
+background:rgba(255,255,255,.1);
+
+color:white;
+
+transition:.4s;
+
+}
+
+.inputBox input::placeholder{
+
+color:#ddd;
+
+}
+
+.inputBox input:focus{
+
+background:rgba(255,255,255,.2);
+
+box-shadow:0 0 15px #00C9FF;
+
+}
+
+.inputBox i:first-child{
+
+position:absolute;
+
+left:18px;
+top:17px;
+
+color:white;
+
+}
+
+.eye{
+
+position:absolute;
+
+right:18px;
+top:17px;
+
+cursor:pointer;
+
+color:white;
+
+}
+
+/* =============================
+Options
+============================= */
+
+.options{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+
+font-size:14px;
+
+color:white;
+
+}
+
+.options a{
+
+color:#00C9FF;
+
+text-decoration:none;
+
+}
+
+.options a:hover{
+
+text-decoration:underline;
+
+}
+
+/* =============================
+Button
+============================= */
+
+.loginBtn{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(45deg,#6C63FF,#00C9FF);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.4s;
+
+font-weight:600;
+
+}
+
+.loginBtn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 15px 30px rgba(0,201,255,.4);
+
+}
+
+/* =============================
+Divider
+============================= */
+
+.divider{
+
+text-align:center;
+
+margin:30px 0;
+
+position:relative;
+
+color:white;
+
+}
+
+.divider::before{
+
+content:"";
+
+position:absolute;
+
+width:40%;
+
+height:1px;
+
+background:#888;
+
+left:0;
+top:50%;
+
+}
+
+.divider::after{
+
+content:"";
+
+position:absolute;
+
+width:40%;
+
+height:1px;
+
+background:#888;
+
+right:0;
+top:50%;
+
+}
+
+/* =============================
+Social Buttons
+============================= */
+
+.social{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.social button{
+
+flex:1;
+
+padding:15px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+font-size:15px;
+
+transition:.4s;
+
+font-weight:600;
+
+}
+
+.google{
+
+background:#EA4335;
+
+color:white;
+
+}
+
+.github{
+
+background:#24292E;
+
+color:white;
+
+}
+
+.social button:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* =============================
+Register
+============================= */
+
+.register{
+
+text-align:center;
+
+margin-top:25px;
+
+color:white;
+
+}
+
+.register a{
+
+color:#00C9FF;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+.register a:hover{
+
+text-decoration:underline;
+
+}
+
+/* =============================
+Responsive
+============================= */
+
+@media(max-width:500px){
+
+.login-card{
+
+width:92%;
+padding:30px;
+
+}
+
+.login-card h1{
+
+font-size:28px;
+
+}
+
+.options{
+
+flex-direction:column;
+gap:10px;
+
+}
+
+.social{
+
+flex-direction:column;
+
+}
+
+.homeBtn{
+
+top:15px;
+left:15px;
+
+}
+
+}

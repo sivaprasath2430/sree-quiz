@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QuizMaster AI | Student Dashboard</title>
+
+<link rel="stylesheet" href="/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<h2>QuizMaster AI</h2>
+
+</div>
+
+<ul>
+
+<li class="active">
+<li id="dashboardBtn" class="active">
+    Dashboard
+</li>
+<li id="quizBtn">
+    Quiz
+</li>
+<li id="leaderboardBtn">
+    Leaderboard
+</li>
+<li id="resultsBtn">
+    resultsBtn
+</li>
+<li id="profileBtn">
+    profile</li>
+    
+<li id="logout">
+    logout</li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="main">
+
+<header>
+
+<div>
+
+<h1>Welcome Student 👋</h1>
+
+<p>Ready to test your knowledge?</p>
+
+</div>
+
+<div class="profile">
+
+<img src="https://i.pravatar.cc/80" alt="Profile">
+
+</div>
+
+</header>
+
+<!-- Statistics -->
+
+<section class="stats">
+
+<div class="card">
+
+<i class="fa-solid fa-book"></i>
+
+<h2>12</h2>
+
+<p>Total Quizzes</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-check-circle"></i>
+
+<h2>8</h2>
+
+<p>Completed</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-star"></i>
+
+<h2>92%</h2>
+
+<p>Best Score</p>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-ranking-star"></i>
+
+<h2>#15</h2>
+
+<p>Your Rank</p>
+
+</div>
+
+</section>
+
+<!-- Available Quiz -->
+
+<section class="quiz-section">
+
+<h2>Available Quiz</h2>
+
+<div class="quiz-grid">
+
+<div class="quiz-card">
+
+<h3>Computer Networks</h3>
+
+<p>20 Questions</p>
+
+<p>15 Minutes</p>
+
+<button onclick="startQuiz(1)">
+
+Start Quiz
+
+</button>
+
+</div>
+
+<div class="quiz-card">
+
+<h3>Operating System</h3>
+
+<p>25 Questions</p>
+
+<p>20 Minutes</p>
+
+<button onclick="startQuiz(2)">
+
+Start Quiz
+
+</button>
+
+</div>
+
+<div class="quiz-card">
+
+<h3>Java Programming</h3>
+
+<p>30 Questions</p>
+
+<p>30 Minutes</p>
+
+<button onclick="startQuiz(3)">
+
+Start Quiz
+
+</button>
+
+</div>
+
+<div class="quiz-card">
+
+<h3>Database</h3>
+
+<p>20 Questions</p>
+
+<p>15 Minutes</p>
+
+<button onclick="startQuiz(4)">
+
+Start Quiz
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Recent Activity -->
+
+<section class="activity">
+
+<h2>Recent Activity</h2>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Quiz</th>
+
+<th>Score</th>
+
+<th>Date</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Java</td>
+
+<td>18 / 20</td>
+
+<td>10 Jul 2026</td>
+
+<td>Completed</td>
+
+</tr>
+
+<tr>
+
+<td>Networking</td>
+
+<td>16 / 20</td>
+
+<td>09 Jul 2026</td>
+
+<td>Completed</td>
+
+</tr>
+
+<tr>
+
+<td>Python</td>
+
+<td>Pending</td>
+
+<td>---</td>
+
+<td>Available</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</section>
+
+</div>
+
+<script src="/dashboard.js"></script>
+<!-- Profile Popup -->
+
+<div class="profile-box" id="profileBox">
+
+    <h2>Student Profile</h2>
+
+    <img src="https://i.pravatar.cc/100" id="profileImage">
+
+    <p><b>Name:</b> <span id="studentName"></span></p>
+
+    <p><b>Student ID:</b> <span id="studentId"></span></p>
+
+    <p><b>College:</b> <span id="studentCollege"></span></p>
+
+    <p><b>Email:</b> <span id="studentEmail"></span></p>
+
+    <button onclick="closeProfile()">Close</button>
+
+</div>
+
+</body>
+
+</html>

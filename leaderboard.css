@@ -1,0 +1,350 @@
+/* ==========================================
+   QuizMaster AI - Leaderboard
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(135deg,#0F172A,#1E3A8A,#0EA5E9);
+
+    color:white;
+
+}
+
+/* ==========================
+Container
+========================== */
+
+.container{
+
+    width:95%;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+}
+
+/* ==========================
+Header
+========================== */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.header h1{
+
+    font-size:42px;
+
+    color:#FFD54F;
+
+}
+
+.header p{
+
+    margin-top:10px;
+
+    color:#ddd;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+Statistics Cards
+========================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+
+}
+
+.card i{
+
+    font-size:45px;
+
+    color:#FFD54F;
+
+    margin-bottom:15px;
+
+}
+
+.card h2{
+
+    font-size:32px;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    color:#ddd;
+
+}
+
+/* ==========================
+Leaderboard Table
+========================== */
+
+.tableContainer{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    margin-bottom:35px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#6C63FF;
+
+}
+
+th{
+
+    padding:18px;
+
+    font-size:18px;
+
+}
+
+td{
+
+    padding:18px;
+
+    text-align:center;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+tbody tr{
+
+    transition:.3s;
+
+}
+
+tbody tr:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* First Rank */
+
+tbody tr:nth-child(1){
+
+    background:rgba(255,215,0,.18);
+
+    font-weight:bold;
+
+}
+
+/* Second Rank */
+
+tbody tr:nth-child(2){
+
+    background:rgba(192,192,192,.15);
+
+}
+
+/* Third Rank */
+
+tbody tr:nth-child(3){
+
+    background:rgba(205,127,50,.15);
+
+}
+
+/* ==========================
+Buttons
+========================== */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.buttons button{
+
+    padding:15px 28px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    color:white;
+
+}
+
+#dashboardBtn{
+
+    background:#6C63FF;
+
+}
+
+#refreshBtn{
+
+    background:#00C9FF;
+
+}
+
+#downloadBtn{
+
+    background:#00B894;
+
+}
+
+.buttons button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+}
+
+/* ==========================
+Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00C9FF;
+
+    border-radius:20px;
+
+}
+
+/* ==========================
+Responsive
+========================== */
+
+@media(max-width:768px){
+
+.container{
+
+    width:98%;
+
+}
+
+.header h1{
+
+    font-size:30px;
+
+}
+
+.stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.tableContainer{
+
+    overflow-x:auto;
+
+}
+
+table{
+
+    min-width:700px;
+
+}
+
+.buttons{
+
+    flex-direction:column;
+
+}
+
+.buttons button{
+
+    width:100%;
+
+}
+
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QuizMaster AI | Leaderboard</title>
+
+<link rel="stylesheet" href="/leaderboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <h1>
+
+            <i class="fa-solid fa-trophy"></i>
+
+            Leaderboard
+
+        </h1>
+
+        <p>Top Students in Quiz Competition</p>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="stats">
+
+        <div class="card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h2 id="totalStudents">0</h2>
+
+            <p>Total Participants</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-medal"></i>
+
+            <h2 id="highestScore">0%</h2>
+
+            <p>Highest Score</p>
+
+        </div>
+
+        <div class="card">
+
+            <i class="fa-solid fa-ranking-star"></i>
+
+            <h2 id="averageScore">0%</h2>
+
+            <p>Average Score</p>
+
+        </div>
+
+    </div>
+
+    <!-- Leaderboard Table -->
+
+    <div class="tableContainer">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Rank</th>
+
+                    <th>Student Name</th>
+
+                    <th>Score</th>
+
+                    <th>Percentage</th>
+
+                    <th>Date</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="leaderboardTable">
+
+                <!-- Filled by JavaScript -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- Buttons -->
+
+    <div class="buttons">
+
+        <button id="dashboardBtn">
+
+            <i class="fa-solid fa-house"></i>
+
+            Dashboard
+
+        </button>
+
+        <button id="refreshBtn">
+
+            <i class="fa-solid fa-rotate"></i>
+
+            Refresh
+
+        </button>
+
+        <button id="downloadBtn">
+
+            <i class="fa-solid fa-download"></i>
+
+            Download Leaderboard
+
+        </button>
+
+    </div>
+
+</div>
+
+<script src="/leaderboard.js"></script>
+
+</body>
+
+</html>
