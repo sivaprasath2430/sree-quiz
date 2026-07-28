@@ -6,11 +6,12 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 // Database Connection
-const db = require("./database");
+require("./database");
 
-
+// Routes
 const authRoutes = require("./authRoutes");
 const adminRoutes = require("./adminRoutes");
 const quizRoutes = require("./quizRoutes");
@@ -20,53 +21,78 @@ const leaderboardRoutes = require("./leaderboardRoutes");
 // Create Express App
 const app = express();
 
-// Connect MongoD
+/* ==========================================
+   Middleware
+========================================== */
 
-// Middleware
 app.use(cors());
+
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
 
+/* ==========================================
+   Serve Frontend
+========================================== */
 
-// Upload Folder
-app.use("/upload", express.static("upload"));
+app.use(express.static(__dirname));
 
-// Home Route
-app.get("/", (req, res) => {
+/* ==========================================
+   Upload Folder
+========================================== */
 
-    res.json({
-        success: true,
-        message: "QuizMaster AI Backend Running Successfully"
-    });
+app.use("/upload", express.static(path.join(__dirname, "upload")));
 
-});
+/* ==========================================
+   API Routes
+========================================== */
 
-// API Routes
 app.use("/api/auth", authRoutes);
+
 app.use("/api/admin", adminRoutes);
+
 app.use("/api/quiz", quizRoutes);
+
 app.use("/api/result", resultRoutes);
+
 app.use("/api/leaderboard", leaderboardRoutes);
 
-// Invalid Route
-app.use((req, res) => {
+/* ==========================================
+   Home Page
+========================================== */
 
-    res.status(404).json({
-        success: false,
-        message: "API Route Not Found"
-    });
+app.get("/", (req, res) => {
+
+    res.sendFile(path.join(__dirname, "index.html"));
 
 });
 
-// Start Server
+/* ==========================================
+   404 Page
+========================================== */
+
+app.use((req, res) => {
+
+    res.status(404).sendFile(path.join(__dirname, "index.html"));
+
+});
+
+/* ==========================================
+   Start Server
+========================================== */
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, "0.0.0.0", () => {
 
     console.log("=================================");
+
     console.log("✅ SQLite Database Connected");
+
     console.log("🚀 QuizMaster AI Server Started");
-    console.log(`🌐 http://localhost:${PORT}`);
+
+    console.log(`🌐 Server running on port ${PORT}`);
+
     console.log("=================================");
 
 });
