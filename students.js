@@ -2,7 +2,7 @@ async function loadStudents() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/admin/students");
+        const response = await fetch("https://sree-quiz.onrender.com/api/admin/students");
         const data = await response.json();
 
         const table = document.getElementById("studentTable");

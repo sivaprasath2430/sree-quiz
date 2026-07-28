@@ -2,7 +2,7 @@
    QuizMaster AI - Quiz Page
 ========================================== */
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://sree-quiz.onrender.com/api";
 
 /* ==========================================
    GET QUIZ ID

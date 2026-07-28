@@ -19,7 +19,7 @@ registerForm.addEventListener("submit", async (e) => {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/auth/register", {
+        const response = await fetch("https://sree-quiz.onrender.com/api/auth/register", {
 
             method: "POST",
 

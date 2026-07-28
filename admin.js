@@ -232,7 +232,7 @@ async function uploadPDF() {
 
         // Upload PDF
         const response = await fetch(
-            "http://localhost:5000/api/quiz/upload",
+            "https://sree-quiz.onrender.com/api/quiz/upload",
             {
                 method: "POST",
                 body: formData
@@ -293,7 +293,7 @@ async function deleteQuizQuestions() {
 
         const response = await fetch(
 
-            `http://localhost:5000/api/quiz/delete/${quizid}`,
+            `"https://sree-quiz.onrender.com/api/quiz/delete/${quizid}`,
 
             {
 
@@ -395,7 +395,7 @@ async function loadQuestions(quizid) {
 
         const response = await fetch(
 
-            `http://localhost:5000/api/quiz/questions/${quizid}`
+            `"https://sree-quiz.onrender.com/api/quiz/questions/${quizid}`
 
         );
 
@@ -662,7 +662,7 @@ async function publishQuiz() {
 
         const response = await fetch(
 
-            "http://localhost:5000/api/quiz/publish",
+            "https://sree-quiz.onrender.com/api/quiz/publish",
 
             {
 
@@ -865,7 +865,7 @@ async function loadStatistics() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/admin/statistics"
+            "https://sree-quiz.onrender.com/api/admin/statistics"
         );
 
         const data = await response.json();
@@ -902,7 +902,7 @@ async function loadStudents() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/admin/students"
+            "https://sree-quiz.onrender.com/api/admin/students"
         );
 
         const data = await response.json();
@@ -939,7 +939,7 @@ async function loadLeaderboard() {
 
         const response = await fetch(
 
-            "http://localhost:5000/api/result/leaderboard"
+            "https://sree-quiz.onrender.com/api/result/leaderboard"
 
         );
 
@@ -975,7 +975,7 @@ async function loadAnalytics() {
 
         const response = await fetch(
 
-            "http://localhost:5000/api/admin/analytics"
+            "https://sree-quiz.onrender.com/api/admin/analytics"
 
         );
 
@@ -1334,7 +1334,7 @@ async function publishQuiz() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/quiz/publish",
+            "https://sree-quiz.onrender.com/api/quiz/publish",
             {
                 method: "POST",
                 headers: {
@@ -1373,7 +1373,7 @@ document.getElementById("clearLeaderboardBtn").addEventListener("click", async (
 
         const response = await fetch(
 
-            "http://localhost:5000/api/admin/clearLeaderboard",
+            "https://sree-quiz.onrender.com/api/admin/clearLeaderboard",
 
             {
 

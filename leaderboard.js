@@ -47,7 +47,7 @@ async function loadLeaderboard() {
 
         const response = await fetch(
 
-            `http://localhost:5000/api/leaderboard/${quizId}?t=${Date.now()}`
+            `https://sree-quiz.onrender.com/api/leaderboard/${quizId}?t=${Date.now()}`
 
         );
 

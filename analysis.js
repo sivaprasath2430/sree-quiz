@@ -1,4 +1,4 @@
-const API="http://localhost:5000/api/admin/analysis";
+const API="https://sree-quiz.onrender.com/api/admin/analysis";
 
 async function loadAnalysis(){
 

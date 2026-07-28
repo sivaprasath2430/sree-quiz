@@ -60,7 +60,7 @@ async function loadResult() {
 
         const response = await fetch(
 
-            `http://localhost:5000/api/result/user/${currentUser.id}`
+            `https://sree-quiz.onrender.com/api/result/user/${currentUser.id}`
 
         );
 
