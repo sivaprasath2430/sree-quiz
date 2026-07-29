@@ -86,7 +86,7 @@ async function loadQuiz() {
 
         loadQuestion();
 
-        startTimer();
+        startTimer(questions.length);
 
     }
 
@@ -217,16 +217,12 @@ function updateProgress() {
 /* ==========================================
    TIMER
 ========================================== */
-let timeLeft;
-let timer;
-
 const secondsPerQuestion = 20;
 
 function startTimer(totalQuestions) {
 
     clearInterval(timer);
 
-    // 20 seconds for each question
     timeLeft = totalQuestions * secondsPerQuestion;
 
     updateTimer();
@@ -248,15 +244,6 @@ function startTimer(totalQuestions) {
         }
 
     }, 1000);
-}
-
-function updateTimer() {
-
-    const minutes = Math.floor(timeLeft / 60);
-    const seconds = timeLeft % 60;
-
-    document.getElementById("time").innerHTML =
-        `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
 /* ==========================================
