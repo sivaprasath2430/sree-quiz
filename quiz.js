@@ -13,7 +13,7 @@ const quizId = params.get("quizid");
 
 if (!quizId) {
 
-    alert("No Quiz Selected!");
+    alert("Quiz is loaded!");
 
     window.location.href = "dashboard.html";
 
@@ -33,8 +33,6 @@ let questions = [];
 let answers = [];
 let currentQuestion = 0;
 
-let timer = null;
-let timeLeft = 0;
 
 /* ==========================================
    LOAD QUIZ
@@ -79,8 +77,7 @@ async function loadQuiz() {
             questions.length;
 
         document.getElementById("currentQuestion").innerHTML = "1";
-
-        timeLeft = (data.time || 10) * 60;
+        
 
         currentQuestion = 0;
 
@@ -217,13 +214,16 @@ function updateProgress() {
 /* ==========================================
    TIMER
 ========================================== */
+let timeLeft = 0;
+let timer = null;
+
 const secondsPerQuestion = 20;
 
 function startTimer(totalQuestions) {
 
     clearInterval(timer);
 
-    timeLeft = totalQuestions * secondsPerQuestion;
+    timeLeft = totalQuestions * 20;
 
     updateTimer();
 
@@ -244,6 +244,15 @@ function startTimer(totalQuestions) {
         }
 
     }, 1000);
+}
+
+function updateTimer() {
+
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+
+    document.getElementById("time").innerHTML =
+        `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
 /* ==========================================

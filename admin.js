@@ -274,47 +274,51 @@ async function uploadPDF() {
 const deleteBtn = document.getElementById("deleteQuizBtn");
 
 if (deleteBtn) {
-
     deleteBtn.addEventListener("click", deleteQuizQuestions);
-
 }
 
 async function deleteQuizQuestions() {
 
-    const quizid = document.getElementById("deleteQuizId").value;
+    const quizid = document.getElementById("deleteQuizId").value.trim();
+
+    if (!quizid) {
+        alert("Please enter Quiz ID");
+        return;
+    }
 
     if (!confirm("Delete all questions of this quiz?")) {
-
         return;
-
     }
 
     try {
 
         const response = await fetch(
-
-            `"https://sree-quiz.onrender.com/api/quiz/delete/${quizid}`,
-
+            `https://sree-quiz.onrender.com/api/quiz/delete/${quizid}`,
             {
-
                 method: "DELETE"
-
             }
-
         );
 
         const data = await response.json();
 
-        alert(data.message);
+        console.log("Delete Response:", data);
 
-        document.getElementById("questionList").innerHTML =
-            "<p>No Questions Available</p>";
+        if (data.success) {
 
-    }
+            alert(data.message);
 
-    catch (err) {
+            document.getElementById("questionList").innerHTML =
+                "<p>No Questions Available</p>";
 
-        console.log(err);
+        } else {
+
+            alert(data.message || "Delete Failed");
+
+        }
+
+    } catch (err) {
+
+        console.error("Delete Error:", err);
 
         alert("Delete Failed");
 
