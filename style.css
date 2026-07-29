@@ -877,3 +877,44 @@ color:#111;
 transform:translateY(-5px);
 
 }
+/* ==========================================
+   Laptop / Desktop Full Screen
+========================================== */
+
+html,
+body {
+    width: 100%;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* Main containers */
+.container,
+.main-container,
+.wrapper,
+.content {
+    width: 100%;
+    max-width: none;
+}
+
+/* Desktop / Laptop */
+@media (min-width: 768px) {
+
+    .container,
+    .main-container,
+    .wrapper,
+    .content {
+        width: 100%;
+        max-width: none;
+    }
+
+    body {
+        width: 100%;
+        min-height: 100vh;
+    }
+}

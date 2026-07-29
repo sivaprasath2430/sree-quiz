@@ -217,10 +217,17 @@ function updateProgress() {
 /* ==========================================
    TIMER
 ========================================== */
+let timeLeft;
+let timer;
 
-function startTimer() {
+const secondsPerQuestion = 20;
+
+function startTimer(totalQuestions) {
 
     clearInterval(timer);
+
+    // 20 seconds for each question
+    timeLeft = totalQuestions * secondsPerQuestion;
 
     updateTimer();
 
@@ -241,7 +248,6 @@ function startTimer() {
         }
 
     }, 1000);
-
 }
 
 function updateTimer() {
@@ -251,7 +257,6 @@ function updateTimer() {
 
     document.getElementById("time").innerHTML =
         `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-
 }
 
 /* ==========================================

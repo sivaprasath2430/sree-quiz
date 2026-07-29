@@ -1004,6 +1004,12 @@ async function loadAnalytics() {
 /* ==========================================
    BUTTON EVENTS
 ========================================== */
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.querySelector(".sidebar");
+
+menuToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+});
 
 if (studentsBtn) {
 
@@ -1396,5 +1402,25 @@ document.getElementById("clearLeaderboardBtn").addEventListener("click", async (
         alert("Unable to Clear Leaderboard");
 
     }
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const menuToggle = document.getElementById("menuToggle");
+    const sidebar = document.getElementById("sidebar");
+
+    if (!menuToggle || !sidebar) {
+        console.log("❌ Menu button or sidebar not found");
+        return;
+    }
+
+    menuToggle.addEventListener("click", function () {
+
+        sidebar.classList.toggle("open");
+
+        console.log("Sidebar toggled");
+
+    });
 
 });

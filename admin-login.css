@@ -9,24 +9,29 @@ box-sizing:border-box;
 font-family:Poppins,sans-serif;
 
 }
+body {
+    width: 100%;
+    min-height: 100vh;
 
-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-height:100vh;
+    padding: 20px;
 
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-background:linear-gradient(135deg,#0F172A,#1E3A8A,#00C9FF);
-
+    background: linear-gradient(
+        135deg,
+        #0F172A,
+        #1E3A8A,
+        #00C9FF
+    );
 }
+
 
 .loginBox{
 
-width:400px;
+ width: 100%;
+    max-width: 400px;
 
 background:white;
 
@@ -106,4 +111,36 @@ transition:.3s;
 
 background:#00C9FF;
 
+}
+/* Device Responsive */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button {
+    max-width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .loginBox {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    .icon {
+        font-size: 55px;
+    }
+
+    .loginBox h1 {
+        font-size: 25px;
+    }
 }

@@ -21,54 +21,50 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
 <!-- Sidebar -->
 
+<!-- Mobile Sidebar Toggle -->
+<button id="menuToggle" class="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+</button>
+
 <div class="sidebar">
 
     <div class="logo">
-
         <i class="fa-solid fa-graduation-cap"></i>
-
         <h2>QuizMaster AI</h2>
-
     </div>
 
     <ul>
-<ul>
 
-    <li id="dashboardBtn" class="active">
-        <i class="fa-solid fa-house"></i>
-        Dashboard
-    </li>
+        <li id="dashboardBtn" class="active">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </li>
 
+        <li id="questionsBtn">
+            <i class="fa-solid fa-circle-question"></i>
+            <span>Questions</span>
+        </li>
 
+        <li id="studentsBtn">
+            <i class="fa-solid fa-users"></i>
+            <span>Students</span>
+        </li>
 
-    <li id="questionsBtn">
-        <i class="fa-solid fa-circle-question"></i>
-        Questions
-    </li>
+        <li id="leaderboardBtn">
+            <i class="fa-solid fa-ranking-star"></i>
+            <span>Leaderboard</span>
+        </li>
 
-    <li id="studentsBtn">
-        <i class="fa-solid fa-users"></i>
-        Students
-    </li>
+        <li id="analysisBtn">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Analysis</span>
+        </li>
 
-    <li id="leaderboardBtn">
-        <i class="fa-solid fa-ranking-star"></i>
-        Leaderboard
-    </li>
+        <li id="settingsBtn">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </li>
 
-    <li id="analysisBtn">
-        <i class="fa-solid fa-chart-line"></i>
-        Analysis
-    </li>
-
-    <li id="settingsBtn">
-        <i class="fa-solid fa-gear"></i>
-        Settings
-    </li>
-    
-
-
-</ul>
     </ul>
 
 </div>
@@ -173,10 +169,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
         accept=".pdf">
 
     <br><br>
-<button id="createQuizBtn">
-    <i class="fa-solid fa-book"></i>
-    Create Quiz
-</button>
 
 <button id="uploadBtn">
     <i class="fa-solid fa-upload"></i>
@@ -188,10 +180,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
     <select id="deleteQuizId">
 
-        <option value="1">Computer Networks</option>
-        <option value="2">Operating System</option>
-        <option value="3">Java Programming</option>
-        <option value="4">Database</option>
+<option value="1">Computer Networks</option>
+ <option value="2">Operating System</option>
+<option value="3">Java Programming</option>
+<option value="4">Database</option>
 
     </select>
 
@@ -268,92 +260,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 
 </div>
 
-<section class="quizInfo">
-
-    <h2>QUIZ DETAILS </h2>
-
-    <input
-        type="text"
-        id="quizTitle"
-        placeholder="Quiz Title">
-
-    <textarea
-        id="quizDescription"
-        placeholder="Quiz Description"></textarea>
-
-    <input
-        type="number"
-        id="quizTime"
-        placeholder="Time in Minutes">
-
-    <input
-        type="number"
-        id="quizMarks"
-        placeholder="Marks Per Question">
-
-    <div class="quizButtons">
-
-        <button id="addQuestionBtn">
-
-            <i class="fa-solid fa-plus"></i>
-
-            Add Question
-
-        </button>
-
-        
-
-        <button id="resetBtn">
-
-            <i class="fa-solid fa-trash"></i>
-
-            Reset
-
-        </button>
-    </div>
-
-</section>
-<<!-- Student Management -->
-
-<section class="studentsSection" id="studentsSection" style="display:none;">
-
-    <div class="studentHeader">
-
-        <h2>Student Management</h2>
-
-        <button id="closeStudents">
-
-            <i class="fa-solid fa-xmark"></i>
-
-            Exit
-
-        </button>
-
-    </div>
-
-    <table id="studentTable">
-
-        <thead>
-
-            <tr>
-
-                <th>S.No</th>
-                <th>Name</th>
-                <th>Student ID</th>
-                <th>Phone</th>
-                <th>College</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-        </tbody>
-
-    </table>
-
-</section>
 
 
 

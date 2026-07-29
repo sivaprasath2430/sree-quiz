@@ -18,41 +18,55 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
 <body>
 
 <!-- Sidebar -->
+<!-- Sidebar Toggle Button -->
+<button id="menuToggle" class="menu-toggle">
+    <i class="fa-solid fa-bars"></i>
+</button>
 
-<div class="sidebar">
+<div class="sidebar" id="sidebar">
 
-<div class="logo">
+    <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h2>QuizMaster AI</h2>
+    </div>
 
-<i class="fa-solid fa-graduation-cap"></i>
+    <ul>
 
-<h2>QuizMaster AI</h2>
+        <li id="dashboardBtn" class="active">
+            <i class="fa-solid fa-house"></i>
+            <span>Dashboard</span>
+        </li>
+
+        <li id="quizBtn">
+            <i class="fa-solid fa-book"></i>
+            <span>Quiz</span>
+        </li>
+
+        <li id="leaderboardBtn">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Leaderboard</span>
+        </li>
+
+        <li id="resultsBtn">
+            <i class="fa-solid fa-chart-column"></i>
+            <span>Results</span>
+        </li>
+
+        <li id="profileBtn">
+            <i class="fa-solid fa-user"></i>
+            <span>Profile</span>
+        </li>
+
+        <li id="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </li>
+
+    </ul>
 
 </div>
+```
 
-<ul>
-
-<li class="active">
-<li id="dashboardBtn" class="active">
-    Dashboard
-</li>
-<li id="quizBtn">
-    Quiz
-</li>
-<li id="leaderboardBtn">
-    Leaderboard
-</li>
-<li id="resultsBtn">
-    resultsBtn
-</li>
-<li id="profileBtn">
-    profile</li>
-    
-<li id="logout">
-    logout</li>
-
-</ul>
-
-</div>
 
 <!-- Main Content -->
 
