@@ -313,18 +313,17 @@ router.delete("/quiz/:id",(req,res)=>{
 /* ==========================================
    EXPORT
 ========================================== */
-
 router.get("/students", (req, res) => {
 
     db.all(
-        "SELECT studentid, fullname, email, college FROM users",
+        "SELECT studentid, fullname, email, college FROM users ORDER BY id DESC",
         [],
         (err, rows) => {
 
             if (err) {
-                return res.status(500).json({
+                return res.json({
                     success: false,
-                    message: "Database Error"
+                    message: err.message
                 });
             }
 
@@ -442,6 +441,85 @@ router.get("/analysis",(req,res)=>{
         }
 
     );
+
+});
+
+router.get("/stats", (req, res) => {
+
+    const queries = {
+
+        students: "SELECT COUNT(*) AS count FROM users",
+
+        questions: "SELECT COUNT(*) AS count FROM questions",
+
+        quizzes: "SELECT COUNT(*) AS count FROM quiz",
+
+        average: `
+            SELECT AVG(percentage) AS average
+            FROM results
+            WHERE percentage IS NOT NULL
+        `
+
+    };
+
+    db.get(queries.students, [], (err, students) => {
+
+        if (err) {
+            return res.json({
+                success: false,
+                message: err.message
+            });
+        }
+
+        db.get(queries.questions, [], (err, questions) => {
+
+            if (err) {
+                return res.json({
+                    success: false,
+                    message: err.message
+                });
+            }
+
+            db.get(queries.quizzes, [], (err, quizzes) => {
+
+                if (err) {
+                    return res.json({
+                        success: false,
+                        message: err.message
+                    });
+                }
+
+                db.get(queries.average, [], (err, average) => {
+
+                    if (err) {
+                        return res.json({
+                            success: false,
+                            message: err.message
+                        });
+                    }
+
+                    res.json({
+                        success: true,
+
+                        students: students.count,
+
+                        questions: questions.count,
+
+                        quizzes: quizzes.count,
+
+                        averageScore:
+                            average.average
+                                ? Number(average.average).toFixed(2)
+                                : "0.00"
+                    });
+
+                });
+
+            });
+
+        });
+
+    });
 
 });
 module.exports = router;

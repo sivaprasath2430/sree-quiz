@@ -860,42 +860,54 @@ function resetQuiz() {
    Part 5
 ========================================== */
 
-/* ==========================================
-   LOAD DASHBOARD STATISTICS
-========================================== */
+const API_URL = "https://sree-quiz.onrender.com/api";
 
-async function loadStatistics() {
+async function loadAdminStats() {
 
     try {
 
         const response = await fetch(
-            "https://sree-quiz.onrender.com/api/admin/statistics"
+            `${API_URL}/admin/stats`
         );
 
         const data = await response.json();
 
-        if (!data.success) return;
+        console.log("Admin Stats:", data);
 
-        const cards = document.querySelectorAll(".card h2");
+        if (!data.success) {
 
-        if (cards.length >= 4) {
+            console.log("Failed to load statistics");
 
-            cards[0].innerText = data.totalStudents;
-            cards[1].innerText = data.totalQuestions;
-            cards[2].innerText = data.totalQuiz;
-            cards[3].innerText = data.averageScore + "%";
+            return;
 
         }
 
-    }
+        document.getElementById("totalStudents").textContent =
+            data.students;
 
-    catch (err) {
+        document.getElementById("totalQuestions").textContent =
+            data.questions;
 
-        console.log(err);
+        document.getElementById("publishedQuiz").textContent =
+            data.quizzes;
+
+        document.getElementById("average").innerText=data.statistics.average+"%";
+
+    let html="";
+
+    } catch (error) {
+
+        console.error("Stats Error:", error);
 
     }
 
 }
+document.addEventListener("DOMContentLoaded", () => {
+
+    loadAdminStats();
+
+});
+
 
 /* ==========================================
    LOAD STUDENTS

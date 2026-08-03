@@ -52,6 +52,7 @@ async function loadLeaderboard() {
         );
 
         const data = await response.json();
+        console.log("Leaderboard Stats:", data);
 
         if (!data.success) {
 
@@ -139,3 +140,24 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
 });
 
 console.log("Leaderboard Loaded Successfully");
+const API_URL = "https://sree-quiz.onrender.com/api";
+
+async function loadLeaderboardStats() {
+
+    const response = await fetch(`${API_URL}/leaderboard/stats`);
+
+    const data = await response.json();
+
+    console.log(data);
+
+    document.getElementById("totalStudents").textContent =
+        data.totalParticipants;
+
+    document.getElementById("highestScore").textContent =
+        data.highestScore + "%";
+
+    document.getElementById("averageScore").textContent =
+        data.averageScore + "%";
+}
+
+loadLeaderboardStats();
