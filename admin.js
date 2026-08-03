@@ -891,9 +891,8 @@ async function loadAdminStats() {
         document.getElementById("publishedQuiz").textContent =
             data.quizzes;
 
-        document.getElementById("average").innerText=data.statistics.average+"%";
-
-    let html="";
+        document.getElementById("averageScore").textContent =
+            data.averageScore + "%";
 
     } catch (error) {
 

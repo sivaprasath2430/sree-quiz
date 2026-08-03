@@ -354,3 +354,30 @@ menuToggle.addEventListener("click", () => {
     sidebar.classList.toggle("open");
 
 });
+async function loadDashboardStats() {
+
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    const response = await fetch(
+        `https://sree-quiz.onrender.com/api/result/dashboard/${currentUser.id}`
+    );
+
+    const data = await response.json();
+
+    if (!data.success) return;
+
+    document.getElementById("totalQuizzes").textContent =
+        data.totalQuizzes;
+
+    document.getElementById("completedQuizzes").textContent =
+        data.completed;
+
+    document.getElementById("bestScore").textContent =
+        data.bestScore + "%";
+
+    document.getElementById("userRank").textContent =
+        "#" + data.rank;
+
+}
+
+loadDashboardStats();
