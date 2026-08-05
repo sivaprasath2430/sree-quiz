@@ -366,9 +366,9 @@ async function loadDashboardStats() {
 
     if (!data.success) return;
 
-    document.getElementById("totalQuizzes").textContent =
-        data.totalQuizzes;
 
+    document.getElementById("totalQuestions").textContent =
+        data.questions;
     document.getElementById("completedQuizzes").textContent =
         data.completed;
 
