@@ -62,3 +62,21 @@ registerForm.addEventListener("submit", async (e) => {
     }
 
 });
+const togglePassword = document.getElementById("togglePassword");
+const password = document.getElementById("password");
+
+togglePassword.addEventListener("click", () => {
+
+    if (password.type === "password") {
+
+        password.type = "text";
+        togglePassword.textContent = "🙈";
+
+    } else {
+
+        password.type = "password";
+        togglePassword.textContent = "👁️";
+
+    }
+
+});
