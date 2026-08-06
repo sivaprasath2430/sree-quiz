@@ -890,7 +890,7 @@ async function loadAdminStats() {
 
         // Published Quiz
         document.getElementById("totalQuizzes").textContent =
-            data.quizzes ?? 0;
+            data.questions ?? 0;
 
 
         document.getElementById("averageScore").textContent =
