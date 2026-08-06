@@ -889,7 +889,7 @@ async function loadAdminStats() {
             data.questions;
 
         // Published Quiz
-        document.getElementById("publishedQuiz").textContent =
+        document.getElementById("totalQuizzes").textContent =
             data.quizzes ?? 0;
 
 
