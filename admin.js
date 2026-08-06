@@ -888,11 +888,13 @@ async function loadAdminStats() {
         document.getElementById("totalQuestions").textContent =
             data.questions;
 
-        document.getElementById("totalquestions").textContent =
-            data.questions;
+        // Published Quiz
+        document.getElementById("publishedQuiz").textContent =
+            data.quizzes ?? 0;
+
 
         document.getElementById("averageScore").textContent =
-            data.averageScore + "%";
+            `${data.averageScore || 0}%`;
 
     } catch (error) {
 
