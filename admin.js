@@ -888,9 +888,11 @@ async function loadAdminStats() {
         document.getElementById("totalQuestions").textContent =
             data.questions;
 
-        // Published Quiz
-        document.getElementById("totalQuizzes").textContent =
-            data.questions ?? 0;
+           document.getElementById("publishedQuiz").textContent =
+            data.questions;
+
+        console.log("Published Quiz set to:", data.questions);
+
 
 
         document.getElementById("averageScore").textContent =
